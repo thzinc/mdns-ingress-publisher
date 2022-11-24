@@ -2,6 +2,10 @@
 
 Watches for Kubernetes Ingress object events and publishes mDNS records accordingly
 
+(Inspired by [hardillb/k8s-ingress-to-avahi])
+
+[hardillb/k8s-ingress-to-avahi]: https://github.com/hardillb/k8s-ingress-to-avahi
+
 ## Quickstart
 
 ### Run as needed
