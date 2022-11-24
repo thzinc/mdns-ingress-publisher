@@ -4,11 +4,33 @@ Watches for Kubernetes Ingress object events and publishes mDNS records accordin
 
 ## Quickstart
 
-TBD
+### Run as needed
+
+Ensure your `.kube/config` is configured to connect to your preferred Kubernetes cluster, then run `mdns-ingress-publisher`.
+
+More information is available by running `mdns-ingress-publisher --help`
+
+### Run as systemd service using microk8s
+
+1. Build the `microk8s-systemd` target
+   ```bash
+   make microk8s-systemd
+   ```
+2. Copy the appropriate binary to `/usr/local/bin`
+   ```bash
+   cp artifacts/linux-amd64/mdns-ingress-publisher /usr/local/bin
+   ```
+3. Run `install.sh`
+   ```bash
+   cd artifacts/microk8s-systemd
+   sudo ./install.sh
+   ```
 
 ## Building
 
-TBD
+```bash
+make build
+```
 
 ## Code of Conduct
 

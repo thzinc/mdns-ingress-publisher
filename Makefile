@@ -8,10 +8,9 @@ build:
 	GOOS=windows GOARCH=amd64 go build -o artifacts/windows-amd64/mdns-ingress-publisher.exe cmd/mdns-ingress-publisher/main.go
 	GOOS=windows GOARCH=arm go build -o artifacts/windows-arm/mdns-ingress-publisher.exe cmd/mdns-ingress-publisher/main.go
 
-microk8s-systemd: build microk8s-systemd-clean
+microk8s-systemd: microk8s-systemd-clean
 	mkdir -p artifacts/microk8s-systemd
 	cp -r build/microk8s-systemd/* artifacts/microk8s-systemd/
-	cp artifacts/linux-amd64/mdns-ingress-publisher artifacts/microk8s-systemd/
 
 microk8s-systemd-clean:
 	rm -rf artifacts/microk8s-systemd
