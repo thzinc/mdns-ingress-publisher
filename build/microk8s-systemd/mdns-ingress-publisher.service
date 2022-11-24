@@ -1,0 +1,15 @@
+[Unit]
+Description=mdns-ingress-publisher - Watches for Kubernetes Ingress object events and publishes mDNS records accordingly
+After=network.target
+
+[Service]
+User=mdns-ingress-publisher
+Type=simple
+WorkingDirectory=/home/mdns-ingress-publisher
+ExecStart=mdns-ingress-publisher
+Restart=no
+PrivateTmp=true
+PrivateDevices=true
+
+[Install]
+WantedBy=multi-user.target
