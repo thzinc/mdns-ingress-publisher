@@ -42,7 +42,7 @@ func NewWatcher(ctx context.Context, ingresses Watcher, zone Zone, defaultTTS in
 				return nil
 			case event, ok := <-wi.ResultChan():
 				if !ok {
-					return nil
+					return errors.New("failed to watch Ingresses; channel closed")
 				}
 
 				if event.Object == nil {
