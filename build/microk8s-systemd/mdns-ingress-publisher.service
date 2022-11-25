@@ -7,7 +7,7 @@ User=mdns-ingress-publisher
 Type=simple
 WorkingDirectory=/home/mdns-ingress-publisher
 ExecStart=mdns-ingress-publisher
-Restart=no
+Restart=on-failure
 PrivateTmp=true
 PrivateDevices=true
 

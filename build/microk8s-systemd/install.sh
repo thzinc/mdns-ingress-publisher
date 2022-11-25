@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-useradd mdns-ingress-publisher -d /home/mdns-ingress-publisher
+useradd mdns-ingress-publisher -d /home/mdns-ingress-publisher || echo "User already exists; continuing"
 
 mkdir -p /home/mdns-ingress-publisher/.kube
 microk8s config >/home/mdns-ingress-publisher/.kube/config
